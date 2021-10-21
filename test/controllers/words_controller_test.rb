@@ -17,7 +17,7 @@ class WordsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create word" do
     assert_difference('Word.count') do
-      post words_url, params: { word: { definition: @word.definition, word: @word.word } }
+      post words_url, params: { word: { definition: @word.definition, word: @word.word , notice: @word.notice} }
     end
 
     assert_redirected_to word_url(Word.last)
@@ -34,7 +34,7 @@ class WordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update word" do
-    patch word_url(@word), params: { word: { definition: @word.definition, word: @word.word } }
+    patch word_url(@word), params: { word: { definition: @word.definition, word: @word.word ,notice: @word.notice} }
     assert_redirected_to word_url(@word)
   end
 

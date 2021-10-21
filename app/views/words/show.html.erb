@@ -10,5 +10,9 @@
   <%= @word.definition %>
 </p>
 
+<p>
+  <strong>Notice:</strong>
+  <%= @word.notice %>
+</p>
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>

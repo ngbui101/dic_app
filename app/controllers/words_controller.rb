@@ -36,6 +36,6 @@ class WordsController < ApplicationController
       @word = Word.find(params[:id])
     end
     def word_params
-      params.require(:word).permit(:word, :definition)
+      params.require(:word).permit(:word, :definition, :notice)
     end
 end
