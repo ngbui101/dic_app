@@ -5,14 +5,16 @@
     </div>
     <div class="col-lg-12 form-group">
       <label for="">Welcome</label>
-      <%= link_to current_user.name, user_path(current_user) %>
+      <%= link_to current_user.name, user_path(current_user.id) %>
     </div>
     <div class="col-lg-12 form-group">
       <label for="">List Users</label>
       <table class="table">
         <thead>
-          <th>ID</th>
-          <th>User Name</th>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">User Name</th>
+          </tr>
         </thead>
         <tbody>
           <%= render @users %>
@@ -20,4 +22,4 @@
       </table>
     </div>
   </div>
-</div>>
+</div>
