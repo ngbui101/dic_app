@@ -1,0 +1,29 @@
+<%= form_with model: word do |form| %>
+  <div>
+    <%= form.label :word %><br>
+    <%= form.text_field :word %>
+    <% @word.errors.full_messages_for(:word).each do |message| %>
+      <div><%= "must be given please " %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :definition %><br>
+    <%= form.text_field :definition %>
+    <% @word.errors.full_messages_for(:definition).each do |message| %>
+      <div><%= "must be given please" %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :wordtype %><br>
+    <%= form.select :wordtype, ['Nouns', 'Adj', 'Adv', 'Verbs'], selected: 'Nouns' %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+    <%= link_to "Back", words_path %>
+  </div>
+
+<% end %>
+

@@ -1,0 +1,13 @@
+<br>
+<a href="/">HOME</a>
+<a href="/login">Login</a>
+<a href="/users/new">Register</a>
+<a href="/">
+	<% if logged_in? %>
+		<%= current_user.username do %>
+		<% end %>
+		<%= link_to 'Logout', logout_path, menthod: :delete%>
+	<% end %>
+</a>
+<p style="color:red"><%= flash[:success] %></p>
+

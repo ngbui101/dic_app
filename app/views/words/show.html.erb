@@ -1,0 +1,10 @@
+<h1><%= @word.word %></h1>
+
+<p><%= @word.definition %></p>
+<p><%= @word.wordtype %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_word_path(@word) %></li>
+  <li><%= link_to "Destroy", word_path(@word), method: :delete, data: {confirn: "Are you sure?"} %></li>
+  <li><%= link_to "Back", words_path %></li>
+</ul>
