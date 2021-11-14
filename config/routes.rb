@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'seaches/show'
+  get 'home/index'
   root 'words#index'
 
   resources :words
