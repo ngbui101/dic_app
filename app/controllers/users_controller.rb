@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Register success #{@user.username}"
+      flash[:success] = "Erfolgreich registiert! Hallo #{@user.username}"
       redirect_to root_path
     else 
-      flash[:success] = "Register failed"
+      flash[:success] = "fehlerhaft registiert"
       render :new
     end
   end

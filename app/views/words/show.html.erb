@@ -4,7 +4,7 @@
 <p><%= @word.wordtype %></p>
 
 <ul>
-  <li><%= link_to "Edit", edit_word_path(@word) %></li>
-  <li><%= link_to "Destroy", word_path(@word), method: :delete, data: {confirn: "Are you sure?"} %></li>
-  <li><%= link_to "Back", words_path %></li>
+  <li><%= link_to "Bearbeiten", edit_word_path(@word) %></li>
+  <li><%= link_to "Löschen", word_path(@word), method: :delete, data: {confirn: "sicher?"} %></li>
+  <li><%= link_to "Zurück", words_path %></li>
 </ul>

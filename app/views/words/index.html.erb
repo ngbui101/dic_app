@@ -1,30 +1,104 @@
-<h1>Dictionary</h1>
-<div>
-  <%= form_tag(words_path, method: :get) do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
+    h1 {
+      text-align: center;
+      color: #333;
+    }
 
-<table>
-  <thead>
-    <tr>
-      <th>English</th>
-      <th>Vietnamese</th>
-      <th>Type </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @word.each do |word| %>
-    <tr>
-      <td><%= link_to word.word, word %></td>
-      <td><%= word.definition %></td>
-      <td><%= word.wordtype %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to "New Word", new_word_path%>
+    div {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    input[type="submit"] {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    a.button {
+      display: block;
+      width: 100px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wörterbuch</h1>
+  <div>
+    <%= form_tag(words_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Suchen" %>
+    <% end %>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Deutsch</th>
+        <th>Vietnamesisch</th>
+        <th>Wortart</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @word.each do |word| %>
+      <tr>
+        <td><%= link_to word.word, word %></td>
+        <td><%= word.definition %></td>
+        <td><%= word.wordtype %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to "Neu", new_word_path, class: "button" %>
+</body>
+</html>
 
